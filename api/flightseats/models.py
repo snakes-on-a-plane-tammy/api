@@ -12,7 +12,7 @@ class Seat(models.Model):
     flight = models.ForeignKey(Flight, on_delete=models.SET_DEFAULT, default=None)
 
     def __str__(self):
-        return f'Seat: {self.name}. Flight: {self.flight}'
+        return f'Seat {self.name}. Flight {self.flight}.'
 
 
 class Passenger(models.Model):
@@ -24,14 +24,14 @@ class Passenger(models.Model):
         primary_key = True,
     )
     def __str__(self):
-        return f'Passenger: {self.name}. Seat: {self.seat}'
+        return f'{self.name}: {self.seat}'
 
 class Player(models.Model):
     name = models.CharField(max_length=256)
     start_point = models.CharField(max_length = 256)
 
     def __str__(self):
-        return f'Name: {self.name}. Start position: {self.start_point}'
+        return f'{self.name}. Start position: {self.start_point}'
 
 class Cell(models.Model):
     x_pos = models.CharField(max_length=256)
